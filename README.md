@@ -2,7 +2,7 @@ This is a "map" (model, really) of several snapshots of the retreat of glacial i
 
 Each layer shows the extent of glacial ice in light grey / white and Glacial Lake Hitchcock in blue. The glacial ice extent is <em>*extremely*</em> inferred due to there being precious little published geologic data to draw from, nor high-resolution map sources for ice-margin boundaries in Massachusetts.  The extent of the glacial lake is also inferred-- see below for more discussion on that matter.
 
-This is also a very, very simple and inefficiant implementation of Leaflet.js to display geological map layers.
+This is also a very, very simple and inefficiant implementation of <a href = "http://leafletjs.com">Leaflet.js</a> to display geological map layers.
 
 Right now, I am pre-loading the GeoJSON layers as scripts in the html-- this is horrendously inefficiant and leads to a very long page-load.
 

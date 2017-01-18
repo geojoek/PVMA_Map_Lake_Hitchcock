@@ -1,10 +1,9 @@
-<html>
+<html lang="en">
 
 <head>
-    <title>PVMA Tangram Road + Basemap Experimentation</title>
+    <title>Glacial Lake Hitchcock Layers</title>
     <link rel="stylesheet" href="css/leaflet.css" />
     <script src="js/leaflet.js"></script>
-    <script src="js/tangram.min.js"></script>
     <style>
         #map {
             height: 100%
@@ -15,29 +14,85 @@
 <body>
     <div id="map"></div>
 
+    <!--pre-loads the GeoJSON layers: This is probably not the best idea, performance-wise. Will investigate Tangram and other options-->
+    <script src="GeoJSON/json_1950.js"></script>
+    <script src="GeoJSON/json_179ConnecticutPhase1.js"></script>
+    <script src="GeoJSON/json_172Stable2.js"></script>
+    <script src="GeoJSON/json_156unstable3.js"></script>
+
     <script>
         // initialize the map
         var map = L.map('map');
 
-        //define layers
         //Topographic Base
         var topobase = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}.{ext}', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map GeoJSON &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
             subdomains: 'abcd',
-            minZoom: 0,
+            minZoom: 7,
             maxZoom: 18,
             ext: 'png'
         });
 
-        // Adding vector tiled roads via Tangram - layer parameters, source, etc... are defined in scene.yaml file
-        var layer = Tangram.leafletLayer({
-            scene: 'scene.yaml',
-            attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
+        // putting all the styling into one function to keep code short as possible
+        function HitchcockStyle(feature) {
+            switch (feature.properties['Type']) {
+                case 'glacier':
+                    return {
+                        weight: '1.04',
+                        fillColor: '#dadfd6',
+                        color: '#000000',
+                        dashArray: '',
+                        lineCap: 'butt',
+                        lineJoin: 'miter',
+                        opacity: '0.0',
+                        fillOpacity: '1.0',
+                    };
+                    break;
+
+                case 'lake':
+                    return {
+                        weight: '1.04',
+                        fillColor: '#1f93b4',
+                        color: '#000000',
+                        dashArray: '',
+                        lineCap: 'butt',
+                        lineJoin: 'miter',
+                        opacity: '0.0',
+                        fillOpacity: '1.0',
+                    };
+                    break;
+            }
+        }
+
+        // Defining the glacier and lake layers
+        var layer195 = new L.geoJson(json_1950, {
+            style: HitchcockStyle
+        });
+
+        var layer179 = new L.geoJson(json_179ConnecticutPhase1, {
+            style: HitchcockStyle
+        });
+
+        var layer172 = new L.geoJson(json_172Stable2, {
+            style: HitchcockStyle
+        });
+
+        var layer156 = new L.geoJson(json_156unstable3, {
+            style: HitchcockStyle
         });
 
         topobase.addTo(map);
-        layer.addTo(map);
-        map.setView([42.476210, -72.590577], 15);
+        map.setView([42.276210, -72.590577], 9);
+        // layer156.addTo(map);
+
+        var baseMaps = {
+            "15.6 thousand years ago": layer156,
+            "17.2 thousand years ago": layer172,
+            "17.9 thousand years ago": layer179,
+            "19.5 thousand years ago": layer195
+        };
+
+        L.control.layers(baseMaps).addTo(map);
     </script>
 </body>
 

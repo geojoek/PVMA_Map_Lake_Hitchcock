@@ -38,12 +38,7 @@
             switch (feature.properties['Type']) {
                 case 'glacier':
                     return {
-                        weight: '1.04',
                         fillColor: '#dadfd6',
-                        color: '#000000',
-                        dashArray: '',
-                        lineCap: 'butt',
-                        lineJoin: 'miter',
                         opacity: '0.0',
                         fillOpacity: '1.0',
                     };
@@ -51,12 +46,7 @@
 
                 case 'lake':
                     return {
-                        weight: '1.04',
                         fillColor: '#1f93b4',
-                        color: '#000000',
-                        dashArray: '',
-                        lineCap: 'butt',
-                        lineJoin: 'miter',
                         opacity: '0.0',
                         fillOpacity: '1.0',
                     };
@@ -86,10 +76,10 @@
         // layer156.addTo(map);
 
         var baseMaps = {
-            "15.6 thousand years ago": layer156,
-            "17.2 thousand years ago": layer172,
-            "17.9 thousand years ago": layer179,
-            "19.5 thousand years ago": layer195
+            "15,600 years ago<br>Rocky Hill Dam breached<br>Local topography starts to rebound<br>Lake level unstable": layer156,
+            "17,200 years ago<br>Stable Lake Level": layer172,
+            "17,900 years ago<br>Highest Lake Level": layer179,
+            "19,500 years ago": layer195
         };
 
         L.control.layers(baseMaps).addTo(map);

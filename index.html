@@ -15,10 +15,12 @@
     <div id="map"></div>
 
     <!--pre-loads the GeoJSON layers: This is probably not the best idea, performance-wise. Will investigate Tangram and other options-->
-    <script src="GeoJSON/json_1950.js"></script>
-    <script src="GeoJSON/json_179ConnecticutPhase1.js"></script>
-    <script src="GeoJSON/json_172Stable2.js"></script>
-    <script src="GeoJSON/json_156unstable3.js"></script>
+    <!--Loading in order of smallest to largest file size-->
+    <!--Each layer is defined as variable within the geojson file-->
+    <script src="json_195_bigger.js"></script>
+    <script src="json_179_bigger.js"></script>
+    <script src="json_172_bigger.js"></script>
+    <script src="json_156_bigger.js"></script>
 
     <script>
         // initialize the map
@@ -55,19 +57,20 @@
         }
 
         // Defining the glacier and lake layers
-        var layer195 = new L.geoJson(json_1950, {
+        // Variables that are called upon here are defined in the geojson files themselves
+        var layer195 = new L.geoJson(json_195_bigger, {
             style: HitchcockStyle
         });
 
-        var layer179 = new L.geoJson(json_179ConnecticutPhase1, {
+        var layer179 = new L.geoJson(json_179_bigger, {
             style: HitchcockStyle
         });
 
-        var layer172 = new L.geoJson(json_172Stable2, {
+        var layer172 = new L.geoJson(json_172_bigger, {
             style: HitchcockStyle
         });
 
-        var layer156 = new L.geoJson(json_156unstable3, {
+        var layer156 = new L.geoJson(json_156_bigger, {
             style: HitchcockStyle
         });
 

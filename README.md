@@ -1,6 +1,8 @@
 This is a "map" (model, really) of several snapshots of the retreat of glacial ice in the Connecticut Valley, CT & MA, USA, and the fluctuating levels of Glacial Lake Hitchcock as an ice-marginal and sediment dammed glacial lake.
 
-Each layer shows the extent of glacial ice in light grey / white and Glacial Lake Hitchcock in blue. The glacial ice extent is <em>*extremely*</em> inferred due to there being precious little published geologic data to draw from, nor high-resolution map sources for ice-margin boundaries in Massachusetts.  The extent of the glacial lake is also inferred-- see below for more discussion on that matter.
+Each layer shows the extent of glacial ice in light grey / white and Glacial Lake Hitchcock in blue. The southern margin of glacial ice extent is <em>*extremely*</em> inferred and should not be considered accurate— This is due to there being precious little published geologic data to draw from, nor high-resolution map sources for ice-margin boundaries in Massachusetts.  The extent of the glacial lake is also inferred-- see below for more discussion on that matter.
+
+<em>NOTE:</em> Only Glacial Lake Hitchcock is shown on this map. There were numerous other glacial lakes across southern New-England that co-existed with Glacial Lake Hitchcock, but they are not shown as they were beyond the scope of this project— perhaps another project!
 
 This is also a very, very simple and inefficiant implementation of <a href = "http://leafletjs.com">Leaflet.js</a> to display geological map layers.
 

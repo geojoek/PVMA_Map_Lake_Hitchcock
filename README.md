@@ -24,9 +24,9 @@ Extent of Glacial Lake Hitchcock:
   - <a href="https://pubs.usgs.gov/sim/2005/2784/">Quaternary Geologic Map of Connecticut</a> for Connecticut
   - Correcting a USGS National Elevation Dataset DEM for isostatic rebound, determined from contours published in the <a href="http://www2.newpaltz.edu/fop/pdf/FOP2015Guide.pdf">2015 Friends of the Pleistocene Guidbook (Stone et al.)</a> and "filling" the Connecticut Valley to Glacial Lake levels as described in that article and referenced therein.  I could go into more detail.
   
-These maps should be considered informed conceptual models more than anything else for public outreach due to the vagaries of GIS and geologic interpretation, and not accurate maps of the extent-- see the USGS's great surficial geologic maps for that.
+These maps should be considered informed conceptual models, more than anything else, for public outreach and educational purposes due to the vagaries of GIS and geologic interpretation. These *are not* accurate maps of the extent of glacial ice or glacial lakes in Southern New England-- please see the USGS's great surficial geologic maps for that.
 
-The ice sheet looks like a rectangle as it's the bounds of the project.  It covered the whole continent and had various lobes extending southward.
+The ice sheet was cropped to a rectangle as it's the bounds of the project.  It covered the whole continent and had various lobes extending southward.
 
 What the layers show:
 <ul>

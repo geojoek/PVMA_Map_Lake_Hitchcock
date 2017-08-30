@@ -1,4 +1,4 @@
-This map can be viewed <a href="http://geojoek.githuib.io/PVMA_Map_Lake_Hitchcock">here</a> on Github Pages or in its final form at <a href="https://www.dinotracksdiscovery.org/map/detail/">dinotrackdiscovery.org</a>. The latter site was produced in conjunction with the great folks at <a href="http://www.digitalgizmo.com">Digital Gizmo</a>.
+This map can be viewed <a href="https://geojoek.githuib.io/PVMA_Map_Lake_Hitchcock">here</a> on Github Pages or in its final form at <a href="https://www.dinotracksdiscovery.org/map/detail/">dinotrackdiscovery.org</a>. The latter site was produced in conjunction with the great folks at <a href="http://www.digitalgizmo.com">Digital Gizmo</a>.
 
 This is a "map" (model, really) of several snapshots of the retreat of glacial ice in the Connecticut Valley, CT & MA, USA, and the fluctuating levels of Glacial Lake Hitchcock as an ice-marginal and sediment dammed glacial lake.
 

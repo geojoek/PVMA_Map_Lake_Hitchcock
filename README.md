@@ -18,7 +18,7 @@ Glacial Ice:
 
  - <a href="https://pubs.usgs.gov/sim/2005/2784/">Quaternary Geologic Map of Connecticut</a> for ice margin positions in Connecticut
  - Ridge, et al., 2012, <a href="http://www.ajsonline.org/content/312/7/685.abstract">The new North American Varve Chronology...</a> American Journal of Science Vol 312, P 685-722
- - Ridge, J.C., 2003, The last deglaciation of the northeastern United States: A combined varve, paleomagnetic, and calibrated <sup>14>/sup> chronology: Chapter 3 in </em>Geoarchaeology of Landscapes in the Glaciated Northeast</em>, New York State Museum Bulletin 497.
+ - Ridge, J.C., 2003, The last deglaciation of the northeastern United States: A combined varve, paleomagnetic, and calibrated <sup>14></sup> chronology: Chapter 3 in </em>Geoarchaeology of Landscapes in the Glaciated Northeast</em>, New York State Museum Bulletin 497.
  
 Extent of Glacial Lake Hitchcock:
   - <a href="https://pubs.usgs.gov/sim/2005/2784/">Quaternary Geologic Map of Connecticut</a> for Connecticut

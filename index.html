@@ -1,92 +1,110 @@
 <html lang="en">
 
 <head>
-    <title>Glacial Lake Hitchcock Layers</title>
-    <link rel="stylesheet" href="css/leaflet.css" />
-    <script src="js/leaflet.js"></script>
-    <style>
-        #map {
-            height: 100%
-        }
-    </style>
+
+  <title>Evolution of Glacial Lake Hitchcock</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+
+  <style>
+      #map {
+          height: 100%;
+          width: 55%
+      }
+  </style>
+
 </head>
 
 <body>
-    <div id="map"></div>
+  <div id="map"></div>
 
-    <!--pre-loads the GeoJSON layers: This is probably not the best idea, performance-wise. Will investigate Tangram and other options-->
-    <!--Loading in order of smallest to largest file size-->
-    <!--Each layer is defined as variable within the geojson file-->
-    <script src="geoJSON_bigger_map/json_195_bigger.js"></script>
-    <script src="geoJSON_bigger_map/json_179_bigger.js"></script>
-    <script src="geoJSON_bigger_map/json_172_bigger.js"></script>
-    <script src="geoJSON_bigger_map/json_156_bigger.js"></script>
+  <!--pre-loads the GeoJSON layers: This is probably not the best idea, performance-wise. Will investigate options for tiling on the fly-->
+  <!--Loading in order of smallest to largest file size-->
+  <!--Each layer is defined as variable within the geojson file-->
+  <script src="geoJSON_bigger_map/json_195_bigger.js"></script>
+  <script src="geoJSON_bigger_map/json_179_bigger.js"></script>
+  <script src="geoJSON_bigger_map/json_172_bigger.js"></script>
+  <script src="geoJSON_bigger_map/json_156_bigger.js"></script>
 
-    <script>
-        // initialize the map
-        var map = L.map('map');
+  <script>
+    // initialize the map
 
-        //Topographic Base
-        var topobase = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}.{ext}', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map GeoJSON &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            subdomains: 'abcd',
-            minZoom: 7,
-            maxZoom: 18,
-            ext: 'png'
-        });
+    var map = L.map('map', {
+      center: [42.20, -72.616],
+      zoom: 10,
+      minZoom: 9,
+      maxZoom: 13,
+      maxBounds: [[42.976115, -72.941112], [41.214197, -72.080585]],
+    });
 
-        // putting all the styling into one function to keep code short as possible
-        function HitchcockStyle(feature) {
-            switch (feature.properties['Type']) {
-                case 'glacier':
-                    return {
-                        fillColor: '#dadfd6',
-                        opacity: '0.0',
-                        fillOpacity: '1.0',
-                    };
-                    break;
+      //Topographic Base
+      var topobase = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}.{ext}', {
+          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map GeoJSON &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          subdomains: 'abcd',
+          minZoom: 7,
+          maxZoom: 18,
+          ext: 'png'
+      });
 
-                case 'lake':
-                    return {
-                        fillColor: '#1f93b4',
-                        opacity: '0.0',
-                        fillOpacity: '1.0',
-                    };
-                    break;
-            }
-        }
+      // putting all the styling into one function to keep code as short as possible
+      function HitchcockStyle(feature) {
+          switch (feature.properties['Type']) {
+              case 'glacier':
+                  return {
+                      fillColor: '#dadfd6',
+                      opacity: '0.0',
+                      fillOpacity: '1.0',
+                  };
+                  break;
 
-        // Defining the glacier and lake layers
-        // Variables that are called upon here are defined in the geojson files themselves
-        var layer195 = new L.geoJson(json_195_bigger, {
-            style: HitchcockStyle
-        });
+              case 'lake':
+                  return {
+                      fillColor: '#1f93b4',
+                      opacity: '0.0',
+                      fillOpacity: '1.0',
+                  };
+                  break;
+          }
+      }
 
-        var layer179 = new L.geoJson(json_179_bigger, {
-            style: HitchcockStyle
-        });
+      // Defining the glacier and lake layers
+      // Variables that are called upon here are defined in the geojson files themselves
+      var layer195 = new L.geoJson(json_195_bigger, {
+          style: HitchcockStyle
+      });
 
-        var layer172 = new L.geoJson(json_172_bigger, {
-            style: HitchcockStyle
-        });
+      var layer179 = new L.geoJson(json_179_bigger, {
+          style: HitchcockStyle
+      });
 
-        var layer156 = new L.geoJson(json_156_bigger, {
-            style: HitchcockStyle
-        });
+      var layer172 = new L.geoJson(json_172_bigger, {
+          style: HitchcockStyle
+      });
 
-        topobase.addTo(map);
-        map.setView([42.276210, -72.590577], 9);
-        // layer156.addTo(map);
+      var layer156 = new L.geoJson(json_156_bigger, {
+          style: HitchcockStyle
+      });
 
-        var baseMaps = {
-            "15,600 years ago<br>Rocky Hill Dam breached<br>Local topography starts to rebound<br>Lake level unstable": layer156,
-            "17,200 years ago<br>Stable Lake Level": layer172,
-            "17,900 years ago<br>Highest Lake Level": layer179,
-            "19,500 years ago": layer195
-        };
+      // var mapBounds = layer195.getBounds()
 
-        L.control.layers(baseMaps).addTo(map);
-    </script>
+      topobase.addTo(map);
+      map.setView([42.276210, -72.590577], 9);
+      // layer156.addTo(map);
+
+      var baseMaps = {
+          "<b>19,500 years ago</b><br>Ice sheet begins to retreat northward<br>from maximum southern extent": layer195,
+          "<b>17,900 years ago</b><br>The lake is at its deepest,<br>with shoreline at highest elevation": layer179,
+          "<b>17,200 years ago</b><br>The lake reaches a stable depth<br>and shoreline elevation for the next<br>1,600 years": layer172,
+          "<b>15,600 years ago</b><br>The earth's crust begins to rise after<br>being released from the weight of the ice sheet.<br>This causes an ice dam at Rocky Hill, CT to finally<br>be breached.<br>The Lake starts to drain and its level becomes<br>unstable for the rest of its history.": layer156
+      };
+
+      var layerControl = L.control.layers(baseMaps, null, {
+        collapsed: false,
+      });
+      layerControl.addTo(map);
+
+  </script>
 </body>
 
 </html>

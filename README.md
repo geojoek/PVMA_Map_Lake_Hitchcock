@@ -1,6 +1,6 @@
 This map can be viewed <a href="https://geojoek.github.io/PVMA_Map_Lake_Hitchcock/">here</a> on Github Pages or in its final form at <a href="https://www.dinotracksdiscovery.org/map/detail/">dinotrackdiscovery.org</a>. The latter site was produced in conjunction with the great folks at <a href="http://www.digitalgizmo.com">Digital Gizmo</a>.
 
-This is a "map" (model, really) of several snapshots of the retreat of glacial ice in the Connecticut Valley, CT & MA, USA, and the fluctuating levels of Glacial Lake Hitchcock as an ice-marginal and sediment dammed glacial lake.
+This is a "map" (model, really) of several snapshots of the retreat of glacial ice in the Connecticut Valley, CT & MA, USA, and the fluctuating levels of Glacial Lake Hitchcock as an ice-marginal and sediment dammed glacial lake. This is known to have occurred at the end of the latest ice age, marking the end of the Pleistocene strating ~20,000 years before present.
 
 Each layer shows the extent of glacial ice in light grey / white and Glacial Lake Hitchcock in blue. The southern margin of glacial ice extent is <em>*extremely*</em> inferred and should not be considered accurate— This is due to there being precious little published geologic data to draw from, nor high-resolution map sources for ice-margin boundaries in Massachusetts.  The extent of the glacial lake is also inferred-- see below for more discussion on that matter.
 
